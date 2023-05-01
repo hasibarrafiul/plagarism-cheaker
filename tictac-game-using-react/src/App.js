@@ -36,30 +36,33 @@ function App() {
 
   //split the string into array of words
   const str1Arr = str2.split(/[.!?]+/)
-  const matchedWord = [];
+  let matchedWord = [];
 
   for(let i=0; i<str1Arr.length; i++){
     let str2Arr = str1Arr[i].split(" ")
     let str1ArrDoc = str1.split(/[.!?]+/)
+    if(str2Arr[i]!= null && str2Arr[i+1]!= null && str2Arr[i+2]!= null && str2Arr[i+3]!= null){
 
-    for (let j=0;j<str1ArrDoc.length;j++){
-      let str1ArrDocSplit = str1ArrDoc[i].split(" ")
-      if(str1ArrDocSplit[j]!= null && str1ArrDocSplit[j+1]!= null && str1ArrDocSplit[j+2]!= null && str1ArrDocSplit[j+3]!= null){
-        if(str2Arr[i] == str1ArrDocSplit[j] && str2Arr[i+1] == str1ArrDocSplit[j+1] && str2Arr[i+2] == str1ArrDocSplit[j+2] && str2Arr[i+3] == str1ArrDocSplit[j+3]){
-          matchedWord = 
+      for (let j=0;j<str1ArrDoc.length;j++){
+        let str1ArrDocSplit = str1ArrDoc[i].split(" ")
+        if(str1ArrDocSplit[j]!= null && str1ArrDocSplit[j+1]!= null && str1ArrDocSplit[j+2]!= null && str1ArrDocSplit[j+3]!= null){
+          console.log("----------------------------------------------------------------------------------------------------")
+          console.log(str2Arr[i] + " " + str2Arr[i+1] + " " + str2Arr[i+2] + " " + str2Arr[i+3])
+          console.log("Comparing to :")
+          console.log(str1ArrDocSplit[j] + " " + str1ArrDocSplit[j+1] + " " + str1ArrDocSplit[j+2] + " " + str1ArrDocSplit[j+3])
+          console.log("----------------------------------------------------------------------------------------------------")
+          if(str2Arr[i] == str1ArrDocSplit[j] && str2Arr[i+1] == str1ArrDocSplit[j+1] && str2Arr[i+2] == str1ArrDocSplit[j+2] && str2Arr[i+3] == str1ArrDocSplit[j+3]){
+            console.log(str2Arr[i] + "   Matched")
+          }
         }
-      }
-      else{
-
+        else{
+          console.log(str2Arr[i] + "   Not Matched")
+        }
       }
     }
 
     console.log(str2Arr)
   }
-
- 
-  
-
 
   return (
     <div className="App">
