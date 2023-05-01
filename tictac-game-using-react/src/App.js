@@ -36,8 +36,28 @@ function App() {
 
   //split the string into array of words
   const str1Arr = str2.split(/[.!?]+/)
+  const matchedWord = [];
 
-  console.log(str1Arr[0])
+  for(let i=0; i<str1Arr.length; i++){
+    let str2Arr = str1Arr[i].split(" ")
+    let str1ArrDoc = str1.split(/[.!?]+/)
+
+    for (let j=0;j<str1ArrDoc.length;j++){
+      let str1ArrDocSplit = str1ArrDoc[i].split(" ")
+      if(str1ArrDocSplit[j]!= null && str1ArrDocSplit[j+1]!= null && str1ArrDocSplit[j+2]!= null && str1ArrDocSplit[j+3]!= null){
+        if(str2Arr[i] == str1ArrDocSplit[j] && str2Arr[i+1] == str1ArrDocSplit[j+1] && str2Arr[i+2] == str1ArrDocSplit[j+2] && str2Arr[i+3] == str1ArrDocSplit[j+3]){
+          matchedWord = 
+        }
+      }
+      else{
+
+      }
+    }
+
+    console.log(str2Arr)
+  }
+
+ 
   
 
 
